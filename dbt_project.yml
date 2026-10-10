@@ -1,0 +1,20 @@
+name: 'dbt_practice'
+version: '1.0.0'
+config-version: 2
+profile: 'dbt_practice'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+# 학습용 미니 프로젝트 — DuckDB(로컬 파일). 외부 warehouse 불필요.
+# 두 가지 갭을 직접 손으로 돌려보기 위한 것:
+#   1) snapshots/snap_user_plan.sql  → SCD Type 2 (dbt snapshot)
+#   2) models/marts/fct_events_incremental.sql → incremental + late-arriving lookback
+models:
+  dbt_practice:
+    +materialized: view          # staging 기본 = view
+    marts:
+      +materialized: table       # mart 기본 = table (조회 성능)

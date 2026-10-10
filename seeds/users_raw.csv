@@ -1,0 +1,4 @@
+user_id,plan_tier,updated_at
+u1,free,2026-01-01 00:00:00
+u2,pro,2026-01-05 00:00:00
+u3,free,2026-01-10 00:00:00

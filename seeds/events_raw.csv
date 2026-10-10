@@ -1,0 +1,5 @@
+event_id,user_id,event_type,event_at
+e1,u1,open,2026-05-01 09:00:00
+e2,u2,edit,2026-05-01 10:00:00
+e3,u1,export,2026-05-02 11:00:00
+e4,u3,open,2026-05-02 12:00:00
